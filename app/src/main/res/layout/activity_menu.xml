@@ -46,7 +46,7 @@
         android:layout_width="150dp"
         android:layout_height="150dp"
         android:layout_marginBottom="24dp"
-        android:src="@drawable/menu_icon"
+        android:src="@drawable/otter_chef"
         android:contentDescription="Imagen del menú"
         android:scaleType="centerCrop" />
 
