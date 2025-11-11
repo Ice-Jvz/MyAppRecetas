@@ -1,0 +1,45 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="32dp">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Selecciona una categoría"
+        android:textSize="22sp"
+        android:textStyle="bold"
+        android:layout_marginBottom="32dp"/>
+
+    <Button
+        android:id="@+id/btnDesayuno"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Desayuno"
+        android:layout_marginBottom="16dp"/>
+
+    <!-- CORRECCIÓN AQUÍ: Añadido el espacio que faltaba -->
+    <Button
+        android:id="@+id/btnAlmuerzo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Almuerzo"
+        android:layout_marginBottom="16dp"/>
+
+    <Button
+        android:id="@+id/btnSnack"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Snack"
+        android:layout_marginBottom="16dp"/>
+
+    <Button
+        android:id="@+id/btnCena"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Cena"/>
+
+</LinearLayout>
+

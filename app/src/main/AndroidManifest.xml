@@ -1,0 +1,36 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.myapprecetas">    <application
+    android:allowBackup="true"
+    android:icon="@mipmap/ic_launcher"
+    android:label="MyAppRecetas"
+    android:roundIcon="@mipmap/ic_launcher_round"
+    android:supportsRtl="true"
+    android:theme="@style/Theme.MyAppRecetas">
+
+    <!-- Esta es la actividad de inicio, debe ser exportada para que el sistema la pueda lanzar -->
+    <activity
+        android:name=".LoginActivity"
+        android:exported="true">
+        <intent-filter>
+            <action android:name="android.intent.action.MAIN" />
+            <category android:name="android.intent.category.LAUNCHER" />
+        </intent-filter>
+    </activity>
+
+    <!-- Estas actividades solo son llamadas desde tu propia app, por lo que no se exportan -->
+    <activity
+        android:name=".MainActivity"
+        android:exported="false" />
+    <activity
+        android:name=".MenuActivity"
+        android:exported="false" />
+    <activity
+        android:name=".RecetasActivity"
+        android:exported="false" />
+    <activity
+        android:name=".DetalleRecetaActivity"
+        android:exported="false" />
+
+</application>
+</manifest>
+
