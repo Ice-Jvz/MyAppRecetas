@@ -7,6 +7,8 @@
     android:padding="32dp">
 
     <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:text="Bienvenido a Recetas Fáciles"
         android:textSize="24sp"
         android:textStyle="bold"
@@ -14,11 +16,11 @@
 
     <Button
         android:id="@+id/btnMenu"
-        android:text="Ir al Menú de Categorías"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:text="Ir al Menú de Categorías"
         android:layout_marginBottom="16dp"/>
 
-    <!-- Si quisieras agregar más botones o funciones, los pondrías aquí -->
 </LinearLayout>
+
 

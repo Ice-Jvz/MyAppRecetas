@@ -35,5 +35,14 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Volver"/>
+
+    <ImageView
+        android:id="@+id/ivReceta"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:layout_marginBottom="16dp"
+        android:scaleType="centerCrop"
+        android:src="@drawable/ic_launcher_background"/> <!-- Así pones una imagen por defecto -->
+
 </LinearLayout>
 

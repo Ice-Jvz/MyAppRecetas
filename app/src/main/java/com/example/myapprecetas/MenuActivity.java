@@ -4,12 +4,17 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Button;
 import androidx.appcompat.app.AppCompatActivity;
+import android.widget.ImageView;
 
 public class MenuActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_menu);
+
+        ImageView ivMenu = findViewById(R.id.ivMenu);
+        ivMenu.setImageResource(R.drawable.otter_chef); // Nombre real de tu imagen
+
 
         Button btnDesayuno = findViewById(R.id.btnDesayuno);
         Button btnAlmuerzo = findViewById(R.id.btnAlmuerzo);
