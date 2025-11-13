@@ -1,8 +1,11 @@
+// Archivo: DetalleRecetaActivity.java
 package com.example.myapprecetas;
 
+import android.graphics.drawable.AnimationDrawable; // <-- Importar
 import android.os.Bundle;
 import android.widget.Button;
-import android.widget.ImageView; // <<< SOLUCIÓN 1: Importar ImageView
+import android.widget.ImageView;
+import android.widget.LinearLayout; // <-- Importar
 import android.widget.TextView;
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -12,36 +15,36 @@ public class DetalleRecetaActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_detalle_receta);
 
-        // --- 1. Vinculamos todas las vistas del XML ---
+        // --- CÓDIGO PARA LA ANIMACIÓN DEL FONDO ---
+        LinearLayout detalleLayout = findViewById(R.id.detalle_layout); // Usamos el ID de este layout
+        AnimationDrawable animationDrawable = (AnimationDrawable) detalleLayout.getBackground();
+        animationDrawable.setEnterFadeDuration(2000);
+        animationDrawable.setExitFadeDuration(4000);
+        animationDrawable.start();
+
+        // --- El resto de tu código de detalle queda exactamente igual ---
+        // 1. Vinculamos las vistas del XML
         ImageView ivReceta = findViewById(R.id.ivReceta);
         TextView tvNombreReceta = findViewById(R.id.tvNombreReceta);
         TextView tvIngredientes = findViewById(R.id.tvIngredientes);
         TextView tvPasoAPaso = findViewById(R.id.tvPasoAPaso);
         Button btnVolver = findViewById(R.id.btnVolver);
 
-        // --- 2. Obtenemos la información pasada desde la pantalla anterior (UNA SOLA VEZ) ---
-        String nombreReceta = getIntent().getStringExtra("nombreReceta");
+        // 2. Recibimos el OBJETO Receta completo que nos envió la actividad anterior
+        Receta receta = getIntent().getParcelableExtra("receta_seleccionada");
 
-        // --- 3. Actualizamos toda la UI (interfaz de usuario) con la información ---
-        tvNombreReceta.setText(nombreReceta);
-
-        // Usamos "if/else if" para configurar la imagen, ingredientes y pasos según la receta
-        if ("Tostadas".equals(nombreReceta)) {
-            ivReceta.setImageResource(R.drawable.tostada);
-            tvIngredientes.setText("Ingredientes:\n- Pan\n- Mantequilla\n- Mermelada");
-            tvPasoAPaso.setText("Preparación:\n1. Tuesta el pan\n2. Unta mantequilla\n3. Añade mermelada.");
-
-        } else if ("Omelette".equals(nombreReceta)) {
-            // <<< SOLUCIÓN 2: Usar el nombre del recurso en minúsculas
-            ivReceta.setImageResource(R.drawable.omelette_jamon_queso);
-            tvIngredientes.setText("Ingredientes:\n- Huevos\n- Queso\n- Jamón");
-            tvPasoAPaso.setText("Preparación:\n1. Bate los huevos\n2. Añade jamón y queso\n3. Cocina en sartén.");
+        // ¡Se acabaron los if/else! Ahora simplemente usamos el objeto.
+        if (receta != null) {
+            // 3. Poblamos las vistas con los datos del objeto Receta
+            tvNombreReceta.setText(receta.getNombre());
+            tvIngredientes.setText(receta.getIngredientes());
+            tvPasoAPaso.setText(receta.getPreparacion());
+            ivReceta.setImageResource(receta.getIdImagen());
         }
-        // ... aquí puedes agregar más `else if` para otras recetas ...
 
-
-        // --- 4. Configuramos los listeners de los botones ---
-        btnVolver.setOnClickListener(v -> finish()); // Cierra esta pantalla y vuelve a la anterior
+        // 4. Configuramos el botón de volver
+        btnVolver.setOnClickListener(v -> finish());
     }
 }
+
 

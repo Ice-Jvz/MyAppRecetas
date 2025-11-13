@@ -1,45 +1,68 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-android:orientation="vertical"
-android:gravity="center"
-android:padding="24dp"
-android:layout_width="match_parent"
-android:layout_height="match_parent">
-
-<!-- CORRECCIÓN AQUÍ -->
-<TextView
-    android:id="@+id/tvCategoria"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:text="Recetas"
-    android:textSize="22sp"
-    android:textStyle="bold"
-    android:layout_marginBottom="24dp"/>
-
-<Button
-    android:id="@+id/btnReceta1"
+    android:id="@+id/recetas_layout"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:padding="24dp"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:text="Receta 1"/>
+    android:layout_height="match_parent"
+    android:background="@drawable/animated_gradient_background">
 
-<Button
-    android:id="@+id/btnReceta2"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:text="Receta 2"
-    android:layout_marginTop="16dp"/>
+    <TextView
+        android:id="@+id/tvCategoria"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Recetas"
+        android:textSize="22sp"
+        android:textStyle="bold"
+        android:textColor="@android:color/white"
+        android:layout_marginBottom="24dp"/>
 
-<Button
-    android:id="@+id/btnReceta3"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:text="Receta 3"
-    android:layout_marginTop="16dp"/>
+    <!-- Botones fijos (luego los reemplazaremos por un RecyclerView) -->
+    <Button
+        android:id="@+id/btnReceta1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Receta 1"
+        android:backgroundTint="#FFFFFF"
+        android:textColor="#333333"/>
 
-<Button
-    android:id="@+id/btnVolver"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:text="Volver al Menú"
-    android:layout_marginTop="32dp"/>
+    <Button
+        android:id="@+id/btnReceta2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Receta 2"
+        android:backgroundTint="#FFFFFF"
+        android:textColor="#333333"
+        android:layout_marginTop="16dp"/>
+
+    <Button
+        android:id="@+id/btnReceta3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Receta 3"
+        android:backgroundTint="#FFFFFF"
+        android:textColor="#333333"
+        android:layout_marginTop="16dp"/>
+
+    <Button
+        android:id="@+id/btnVolver"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Volver al Menú"
+        android:backgroundTint="#9E9E9E"
+        android:textColor="#FFFFFF"
+        android:layout_marginTop="32dp"/>
+
+    <!-- Tu imagen. Asegúrate de que pulpito_chef exista en res/drawable -->
+    <ImageView
+        android:id="@+id/ivpulpito_chef"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_marginTop="24dp"
+        android:contentDescription="Pulpo chef categoría"
+        android:scaleType="centerCrop"
+        android:src="@drawable/pulpito_chef" />
+
 </LinearLayout>
+
 

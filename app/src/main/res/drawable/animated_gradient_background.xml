@@ -1,0 +1,13 @@
+<!-- res/drawable/animated_gradient_background.xml -->
+<animation-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:drawable="@drawable/gradient_1"
+        android:duration="4000" />  <!-- Duración en milisegundos (4 segundos) -->
+    <item
+        android:drawable="@drawable/gradient_2"
+        android:duration="4000" />
+    <item
+        android:drawable="@drawable/gradient_3"
+        android:duration="4000" />
+</animation-list>
+    

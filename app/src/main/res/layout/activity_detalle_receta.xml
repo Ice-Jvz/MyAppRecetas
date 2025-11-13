@@ -1,9 +1,19 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/detalle_layout"
     android:orientation="vertical"
     android:gravity="center"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="24dp">
+    android:padding="24dp"
+    android:background="@drawable/animated_gradient_background">
+
+    <ImageView
+        android:id="@+id/ivReceta"
+        android:layout_width="180dp"
+        android:layout_height="180dp"
+        android:layout_marginBottom="16dp"
+        android:scaleType="centerCrop"
+        android:contentDescription="Imagen de la receta" />
 
     <TextView
         android:id="@+id/tvNombreReceta"
@@ -12,6 +22,7 @@
         android:text="Nombre de la receta"
         android:textSize="24sp"
         android:textStyle="bold"
+        android:textColor="@android:color/white"
         android:layout_marginBottom="16dp"/>
 
     <TextView
@@ -20,6 +31,7 @@
         android:layout_height="wrap_content"
         android:text="Ingredientes:"
         android:textSize="18sp"
+        android:textColor="@android:color/white"
         android:layout_marginBottom="8dp"/>
 
     <TextView
@@ -28,21 +40,16 @@
         android:layout_height="wrap_content"
         android:text="Preparación:"
         android:textSize="18sp"
+        android:textColor="@android:color/white"
         android:layout_marginBottom="24dp"/>
 
     <Button
         android:id="@+id/btnVolver"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Volver"/>
-
-    <ImageView
-        android:id="@+id/ivReceta"
-        android:layout_width="200dp"
-        android:layout_height="200dp"
-        android:layout_marginBottom="16dp"
-        android:scaleType="centerCrop"
-        android:src="@drawable/ic_launcher_background"/> <!-- Así pones una imagen por defecto -->
-
+        android:text="Volver"
+        android:backgroundTint="#FFFFFF"
+        android:textColor="#333333"/>
 </LinearLayout>
+
 
