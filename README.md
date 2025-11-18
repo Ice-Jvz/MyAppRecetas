@@ -69,5 +69,3 @@ Aplicación Android para consultar recetas rápidas y sencillas por categoría (
 
 Jhonatan Castro  
 [jcastro21@udi.edu.co]
-
-1. Clona el repositorio:
