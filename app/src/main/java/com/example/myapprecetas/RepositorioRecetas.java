@@ -4,10 +4,33 @@ package com.example.myapprecetas;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * Clase de utilidad que actúa como el repositorio de datos de recetas para la aplicación.
+ * <p>
+ * Su responsabilidad es crear, almacenar y proporcionar acceso a la lista de todas
+ * las recetas disponibles. Al usar métodos estáticos, funciona como una fuente de datos
+ * única y centralizada (patrón Singleton simple) sin necesidad de instanciar la clase.
+ * </p>
+ * <p>
+ * Actualmente, los datos de las recetas están "hardcodeados" (escritos directamente
+ * en el código), lo cual es adecuado para una lista fija de recetas.
+ * </p>
+ *
+ * @version 1.0
+ * @since 2025-11-17
+ * @author [Jhonatan Castro]
+ */
 public class RepositorioRecetas {
 
-    // --- SOLUCIÓN: Separar el comentario del método ---
-    // Método que devuelve TODAS las recetas que tienes
+    /**
+     * Construye y devuelve una lista completa con todas las recetas disponibles en la aplicación.
+     * <p>
+     * Este método es la fuente principal de datos. Cada vez que se llama, crea una nueva
+     * lista y la puebla con todos los objetos {@link Receta} predefinidos.
+     * </p>
+     *
+     * @return Una {@code List<Receta>} que contiene todas las recetas.
+     */
     public static List<Receta> getRecetas() {
         List<Receta> recetas = new ArrayList<>();
 
@@ -54,20 +77,35 @@ public class RepositorioRecetas {
                 "Snack"
         ));
 
+        // Devuelve la lista completa de recetas.
         return recetas;
     }
 
-    // El resto de tu archivo no necesita cambios, funcionará automáticamente.
+    /**
+     * Filtra la lista completa de recetas y devuelve solo aquellas que pertenecen a una categoría específica.
+     * <p>
+     * Este método es utilizado por {@link RecetasActivity} para mostrar al usuario
+     * únicamente las recetas que ha solicitado ver. La comparación de categorías
+     * no distingue entre mayúsculas y minúsculas.
+     * </p>
+     *
+     * @param categoria El nombre de la categoría por la cual filtrar (ej. "Desayuno", "Almuerzo").
+     * @return Una nueva {@code List<Receta>} que contiene solo las recetas de la categoría especificada.
+     *         Si no se encuentra ninguna receta para esa categoría, devuelve una lista vacía.
+     */
     public static List<Receta> getRecetasPorCategoria(String categoria) {
         List<Receta> recetasFiltradas = new ArrayList<>();
-        List<Receta> todasLasRecetas = getRecetas();
+        List<Receta> todasLasRecetas = getRecetas(); // Obtiene la lista completa de recetas.
+
+        // Itera sobre cada receta para comprobar si su categoría coincide.
         for (Receta receta : todasLasRecetas) {
             if (receta.getCategoria().equalsIgnoreCase(categoria)) {
-                recetasFiltradas.add(receta);
+                recetasFiltradas.add(receta); // Añade la receta a la lista filtrada si coincide.
             }
         }
-        return recetasFiltradas;
+        return recetasFiltradas; // Devuelve la lista de recetas que coinciden.
     }
 }
+
 
 
