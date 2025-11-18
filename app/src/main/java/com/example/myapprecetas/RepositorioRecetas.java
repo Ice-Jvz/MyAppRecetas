@@ -77,6 +77,15 @@ public class RepositorioRecetas {
                 "Snack"
         ));
 
+        recetas.add(new Receta(
+                "tostada",
+                "• 2 rodajas de pan\n• Mermelada de fresa",
+                "1. Tuesta el pan .\n2. Vierte la mermelada en el pan.\n3. acomapañar con un vaso de Leche.",
+                R.drawable.tostada,
+                "Cena"
+
+        ));
+
         // Devuelve la lista completa de recetas.
         return recetas;
     }
